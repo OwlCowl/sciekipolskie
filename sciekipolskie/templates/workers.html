@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include '/Users/yana/Documents/Task/sciekipolskie/templates/includes/header.html' %}
+<body>
+<!-- Nav -->
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Employees' Information</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">List of all employees<span class="sr-only"></span></a>
+      <a class="nav-item nav-link" href="/employee/new/">Add new employee</a>
+    </div>
+  </div>
+</nav>
+<!-- Nav -->
+
+<!-- table -->
+<table class="table">
+  <thead>
+<!--  tag tr defines a table row-->
+    <tr class="d-flex">
+<!-- tag th defines a header cell in an HTML table-->
+      <th scope="col" class="col-1">#</th>
+      <th scope="col" class="col-2">Name Surname</th>
+      <th scope="col" class="col-1">Work ID</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for worker in workers %}
+    <tr class="d-flex">
+      <th scope="row" class="col-1"></th>
+        <td class="col-2"><a href="employee/details/{{ worker.id }}">{{ worker.name }}</a></td>
+        <td class="col-2">{{ worker.id_of_worker }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<!-- table -->
+
+
+<!-- Footer -->
+{% include '/Users/yana/Documents/Task/sciekipolskie/templates/includes/footer.html' %}
+<!-- Footer -->
+</body>
+</html>

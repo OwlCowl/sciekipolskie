@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include '/Users/yana/Documents/Task/sciekipolskie/templates/includes/header.html' %}
+<body>
+<!-- Nav -->
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Employees' Information</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">List of all employees<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/employee/new/">Add new employee</a>
+    </div>
+  </div>
+</nav>
+<!-- Nav -->
+
+<!-- Form -->
+<div class="card">
+    <div class="card-body">
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="Employee name">Name of new employee</label>
+                <input type="text" class="form-control" name="name">
+                <small id="employee_name" class="form-text text-muted">The name should be unique</small>
+            </div>
+
+            <div class="form-group">
+                <label for="Employee_ID">Personal Employee ID</label>
+                <input type="text" class="form-control" name="id_of_worker">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+<!-- Form -->
+
+<!-- Footer -->
+{% include '/Users/yana/Documents/Task/sciekipolskie/templates/includes/footer.html' %}
+<!-- Footer -->
+</body>
+</html>
