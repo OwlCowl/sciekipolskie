@@ -20,6 +20,7 @@
         <h3>Employee name and ID: </h3> <h4 style="background-color:#3DB1D1">{{ worker.name }} {{ worker.id_of_worker }} </h4>
         <p>Tasks: Here I will set up task table</p>
               <th scope="col" class="col-1" colspan="4"><h3>Tasks</h3>
+                  <a class="nav-item nav-link" href="/task/new/{{ worker.id_of_worker }}/">Add new task</a>
                             <table style="text-align: center; width: 100%">
                 <tr >
                     <td class="col-1">
